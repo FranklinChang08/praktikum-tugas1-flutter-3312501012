@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
       home: const MyHomePage(
+        // Menambahkan 2 variable nama dan nim untuk dapat disimpan ke variable 
         title: 'Aplikasi Pertama',
         nama: 'Franklin Sebastian Felix',
         nim: '3312501012',
@@ -46,12 +47,14 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
+  // Function yang berfungsi untuk menambah counter
   void _incrementCounter() {
     setState(() {
       _counter++;
     });
   }
 
+  // Function yang berfungsi untuk mengurangi counter
   void _decrimentCounter() {
     setState(() {
       {
@@ -60,6 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  // Function yang berfungsi untuk mereset counter
   void _resetCounter() {
     setState(() {
       _counter = 0;
@@ -87,6 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: .center,
           children: [
+            // Container yang berfungsi sebagai pemmbungkus dari counter
             Container(
               width: 150,
               height: 150,
@@ -102,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ],
               ),
-
+              // Child dari container yang dimana child berisi teks yang ditampilkan berupa nilai counter
               child: Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -121,10 +126,13 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             SizedBox(height: 50),
+
+            // Row yang berfungsi sebagai layout secara horizontal untuk setiap content didalamnya
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               spacing: 48,
               children: [
+                // Widget tombol yang memiliki garis luar dengan fungsi menambah nilai counter
                 OutlinedButton.icon(
                   onPressed: _incrementCounter,
                   style: OutlinedButton.styleFrom(
@@ -143,6 +151,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     style: TextStyle(fontWeight: FontWeight.w900),
                   ),
                 ),
+                // Widget tombol yang memiliki garis luar dengan fungsi mengurangi nilai counter
                 OutlinedButton.icon(
                   onPressed: _decrimentCounter,
                   style: OutlinedButton.styleFrom(
@@ -159,6 +168,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
+            // Widget tombol yang memiliki garis luar dengan fungsi mereset nilai counter
             OutlinedButton.icon(
               onPressed: _resetCounter,
               style: OutlinedButton.styleFrom(
@@ -179,6 +189,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
             SizedBox(height: 20),
 
+            // Container yang berfungsi sebagai pembungkus content
             Container(
               width: double.infinity,
               margin: EdgeInsets.symmetric(horizontal: 20),
@@ -197,14 +208,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
 
+              // Child yang menggunakan widget column dimana menyusun content secara vertikal
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  // Widget teks untuk menampilkan nama
                   Text(
                     'Nama: ${widget.nama}',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                   ),
+                  // Widget teks untuk menampilkan nim
                   Text(
                     'NIM: ${widget.nim}',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
